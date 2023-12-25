@@ -9,8 +9,9 @@ import retrofit2.Retrofit
 interface AppContainer {
     val kontakRepository: KontakRepository
 }
+
 class KontakContainer : AppContainer{
-    private val baseURL = ""
+    private val baseURL = "http://10.0.2.2:8080/"
     private val json = Json{ignoreUnknownKeys = true}
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
